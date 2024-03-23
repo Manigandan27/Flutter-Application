@@ -10,6 +10,7 @@ final usersProvider = FutureProvider<List<UserModel>>((ref) async {
   final apiService = ApiService(dio);
   final data = await apiService.getUsers(1); 
   return data.map((userData) => UserModel.fromJson(userData)).toList();
+  
 });
 
 // Provide Dio instance as a dependency
